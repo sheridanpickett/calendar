@@ -50,49 +50,21 @@ const Calendar = () => {
   let [year, setYear] = useState(getCurrentYear());
 
   const getMonth = monthInt => {
-    let month = '';
-    switch(monthInt) {
-      case 0:
-        month = 'January';
-      break;
-      case 1:
-        month = 'February';
-      break;
-      case 2:
-        month = 'March';
-      break;
-      case 3:
-        month = 'April';
-      break;
-      case 4:
-        month = 'May';
-      break;
-      case 5:
-        month = 'June';
-      break;
-      case 6:
-        month = 'July';
-      break;
-      case 7:
-        month = 'August';
-      break;
-      case 8:
-        month = 'September';
-      break;
-      case 9:
-        month = 'October';
-      break;
-      case 10:
-        month = 'November';
-      break;
-      case 11:
-        month = 'December';
-      break;
-      default:
-        month = 'January'
-      break;
-    }
-    return month;
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November', 
+      'December'
+    ]
+    return months[monthInt];
   }
 
   const incrementMonth = (month, setMonth, year, setYear) => {
@@ -123,8 +95,8 @@ const Calendar = () => {
     <StyledCalendar>
       <StyledHeader>
         <div>
-          <StyledButton onClick={()=>decrementMonth(month, setMonth, year, setYear)}><i className="fa fa-chevron-left"></i></StyledButton>
-          <StyledButton onClick={()=>incrementMonth(month, setMonth, year, setYear)}><i className="fa fa-chevron-right"></i></StyledButton>
+          <StyledButton onClick={()=>decrementMonth(month, setMonth, year, setYear)}></StyledButton>
+          <StyledButton onClick={()=>incrementMonth(month, setMonth, year, setYear)}></StyledButton>
           <StyledButton onClick={()=>setDateToCurrentDay()}>Today</StyledButton>
         </div>
         <div>
