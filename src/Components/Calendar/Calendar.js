@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import DateGrid from './DateGrid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 const StyledHeader = styled.div`
   display: flex;
@@ -95,8 +98,8 @@ const Calendar = () => {
     <StyledCalendar>
       <StyledHeader>
         <div>
-          <StyledButton onClick={()=>decrementMonth(month, setMonth, year, setYear)}></StyledButton>
-          <StyledButton onClick={()=>incrementMonth(month, setMonth, year, setYear)}></StyledButton>
+          <StyledButton onClick={()=>decrementMonth(month, setMonth, year, setYear)}><FontAwesomeIcon icon={faChevronLeft} /></StyledButton>
+          <StyledButton onClick={()=>incrementMonth(month, setMonth, year, setYear)}><FontAwesomeIcon icon={faChevronRight} /></StyledButton>
           <StyledButton onClick={()=>setDateToCurrentDay()}>Today</StyledButton>
         </div>
         <div>
